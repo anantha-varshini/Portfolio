@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+::selection {
+  background: #a78bfa;
+  color: #090b14;
+}
