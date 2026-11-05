@@ -10,50 +10,59 @@ function App() {
     Tools: ["Git", "GitHub"],
   };
 
-  const projects = [
-    {
-      number: "01",
-      name: "TRAVEL GO",
-      category: "Travel Booking Website",
-      description:
-        "A full-stack travel booking platform built using the MERN stack with a responsive and user-friendly interface.",
-      features: [
-        "Secure authentication and authorization",
-        "Protected routes and form validation",
-        "RESTful APIs with MongoDB integration",
-        "User, destination and booking management",
-      ],
-      tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
-    },
-    {
-      number: "02",
-      name: "FOOD EXPRESS",
-      category: "Food Ordering Website",
-      description:
-        "A full-stack online food ordering application with user registration, login, and JWT-based authentication.",
-      features: [
-        "JWT authentication and authorization",
-        "Frontend and backend validation",
-        "RESTful API development",
-        "Food items, cart and order management",
-      ],
-      tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
-    },
-    {
-      number: "03",
-      name: "LUXE",
-      category: "E-commerce Fashion Store",
-      description:
-        "A modern full-stack fashion e-commerce website featuring category-based products and a seamless shopping experience.",
-      features: [
-        "Product search and filters",
-        "Wishlist and shopping cart",
-        "Checkout and Razorpay payment integration",
-        "Order tracking and customer profiles",
-      ],
-      tech: ["Next.js", "React.js", "Redux Toolkit", "MongoDB", "Razorpay"],
-    },
-  ];
+const projects = [
+  {
+    number: "01",
+    name: "TRAVEL GO",
+    category: "Travel Booking Website",
+    image: "/travelgosc.png",
+    liveUrl: "https://travel-go-szbm.onrender.com",
+    githubUrl: "https://github.com/anantha-varshini/travelgo-frontend",
+    description:
+      "A full-stack travel booking platform built using the MERN stack with a responsive and user-friendly interface.",
+    features: [
+      "Secure authentication and authorization",
+      "Protected routes and form validation",
+      "RESTful APIs with MongoDB integration",
+      "User, destination and booking management",
+    ],
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
+  },
+  {
+    number: "02",
+    name: "FOOD EXPRESS",
+    category: "Food Ordering Website",
+    image: "/foodexpresssc.png",
+    liveUrl: "https://food-express-nhqn.onrender.com",
+    githubUrl: "https://github.com/anantha-varshini/Food-Express",
+    description:
+      "A full-stack online food ordering application with user registration, login, and JWT-based authentication.",
+    features: [
+      "JWT authentication and authorization",
+      "Frontend and backend validation",
+      "RESTful API development",
+      "Food items, cart and order management",
+    ],
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
+  },
+  {
+    number: "03",
+    name: "LUXE",
+    category: "E-commerce Fashion Store",
+    image: "/luxesc.png",
+    liveUrl: "https://luxe-av-1518.vercel.app/",
+    githubUrl: "https://github.com/anantha-varshini/luxe",
+    description:
+      "A modern full-stack fashion e-commerce website featuring category-based products and a seamless shopping experience.",
+    features: [
+      "Product search and filters",
+      "Wishlist and shopping cart",
+      "Checkout and Razorpay payment integration",
+      "Order tracking and customer profiles",
+    ],
+    tech: ["Next.js", "React.js", "Redux Toolkit", "MongoDB", "Razorpay"],
+  },
+];
 
   const certifications = [
     "Python Course Completion – PrepInsta Prime",
@@ -236,47 +245,94 @@ function App() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section className="section projects-section" id="projects">
-        <div className="section-heading">
-          <p>WHAT I'VE BUILT</p>
-          <h2>
-            Featured <span>Projects</span>
-          </h2>
+<section className="section projects-section" id="projects">
+  <div className="section-heading">
+    <p>WHAT I'VE BUILT</p>
 
-          <p className="heading-description">
-            A showcase of my full-stack development projects and technical
-            work.
+    <h2>
+      Featured <span>Projects</span>
+    </h2>
+
+    <p className="heading-description">
+      A showcase of my full-stack development projects and technical work.
+    </p>
+  </div>
+
+  <div className="projects-grid">
+    {projects.map((project) => (
+      <div className="project-card" key={project.number}>
+
+        {/* PROJECT SCREENSHOT */}
+        <div className="project-image">
+          <img
+            src={project.image}
+            alt={`${project.name} homepage screenshot`}
+          />
+        </div>
+
+        {/* PROJECT DETAILS */}
+        <div className="project-content">
+
+          <div className="project-top">
+            <span className="project-number">{project.number}</span>
+            <span className="project-symbol">↗</span>
+          </div>
+
+          <h3>{project.name}</h3>
+
+          <p className="project-category">
+            {project.category}
           </p>
+
+          <p className="project-description">
+            {project.description}
+          </p>
+
+          <ul>
+            {project.features.map((feature) => (
+              <li key={feature}>{feature}</li>
+            ))}
+          </ul>
+
+          {/* TECHNOLOGIES */}
+          <div className="project-tech">
+            {project.tech.map((tech) => (
+              <span key={tech}>{tech}</span>
+            ))}
+          </div>
+
+          {/* PROJECT LINKS */}
+          <div className="project-links">
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="project-btn primary-project-btn"
+              >
+                Live Demo ↗
+              </a>
+            )}
+
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="project-btn secondary-project-btn"
+              >
+                GitHub ↗
+              </a>
+            )}
+
+          </div>
+
         </div>
-
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div className="project-card" key={project.number}>
-              <div className="project-top">
-                <span className="project-number">{project.number}</span>
-                <span className="project-symbol">↗</span>
-              </div>
-
-              <h3>{project.name}</h3>
-              <p className="project-category">{project.category}</p>
-
-              <p className="project-description">{project.description}</p>
-
-              <ul>
-                {project.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-
-              <div className="project-tech">
-                {project.tech.map((tech) => (
-                  <span key={tech}>{tech}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* CERTIFICATIONS SECTION */}
       <section
