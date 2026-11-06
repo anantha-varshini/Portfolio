@@ -43,7 +43,7 @@ const projects = [
       "RESTful API development",
       "Food items, cart and order management",
     ],
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
+    tech: ["PostgreSQL", "Express.js", "React.js", "Node.js"],
   },
   {
     number: "03",
