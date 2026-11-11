@@ -50,7 +50,7 @@ const projects = [
     name: "LUXE",
     category: "E-commerce Fashion Store",
     image: "/luxesc.png",
-    liveUrl: "https://luxe-av-1518.vercel.app/",
+    liveUrl: "https://luxe-r853.onrender.com/",
     githubUrl: "https://github.com/anantha-varshini/luxe",
     description:
       "A modern full-stack fashion e-commerce website featuring category-based products and a seamless shopping experience.",
